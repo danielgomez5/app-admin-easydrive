@@ -1,11 +1,11 @@
-﻿using AppAdminEasyDrive.Controller;
+﻿using Dashboard.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppAdminEasyDrive
+namespace Dashboard
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace AppAdminEasyDrive
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new InitController();
+            new DashboardController();
         }
     }
 }

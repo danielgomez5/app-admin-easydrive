@@ -1,11 +1,11 @@
-﻿using AppAdminEasyDrive.Controller;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zones.Controller;
 
-namespace AppAdminEasyDrive
+namespace Zones
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace AppAdminEasyDrive
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            new InitController();
+            new ZonaController();
         }
     }
 }
