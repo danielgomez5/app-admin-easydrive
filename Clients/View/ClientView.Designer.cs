@@ -29,25 +29,52 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.clientsDataGridView = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.Location = new System.Drawing.Point(448, 217);
+            this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clients";
             // 
+            // clientsDataGridView
+            // 
+            this.clientsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.clientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clientsDataGridView.Location = new System.Drawing.Point(13, 72);
+            this.clientsDataGridView.Name = "clientsDataGridView";
+            this.clientsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.clientsDataGridView.Size = new System.Drawing.Size(975, 367);
+            this.clientsDataGridView.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.label2.Location = new System.Drawing.Point(117, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 34);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "registrats";
+            // 
             // ClientView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.clientsDataGridView);
             this.Controls.Add(this.label1);
             this.Name = "ClientView";
             this.Size = new System.Drawing.Size(1012, 482);
+            ((System.ComponentModel.ISupportInitialize)(this.clientsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -56,5 +83,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView clientsDataGridView;
+        private System.Windows.Forms.Label label2;
     }
 }
