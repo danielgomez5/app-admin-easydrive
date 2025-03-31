@@ -1,11 +1,8 @@
-﻿using Clients.Controller;
+﻿using ClassLibrary;
+using Clients.Controller;
 using Cotxes.Controller;
 using Dashboard.Controller;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Taxistes.Controller;
 using Zones.Controller;
@@ -19,6 +16,7 @@ namespace AppAdminEasyDrive.Controller
         public InitController()
         {
             setListeners();
+            Repositori.CreateHttpClient();
             Application.Run(f);
         }
 

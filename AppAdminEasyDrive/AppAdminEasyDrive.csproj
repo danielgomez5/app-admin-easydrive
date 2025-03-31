@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,13 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\InitController.cs" />
-    <Compile Include="Model\Cotxe.cs" />
-    <Compile Include="Model\DadesPagament.cs" />
-    <Compile Include="Model\Estat.cs" />
-    <Compile Include="Model\Reserva.cs" />
-    <Compile Include="Model\Usuari.cs" />
-    <Compile Include="Model\Viatge.cs" />
-    <Compile Include="Model\Zona.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +70,7 @@
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +85,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{7ac9e2f7-0897-4cc1-97ba-22b925e7b605}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Clients\Clients.csproj">
       <Project>{DD0BD9CA-6413-4A8F-80EF-EC8BD12C65EE}</Project>
       <Name>Clients</Name>
@@ -108,6 +109,9 @@
       <Project>{871FA129-EB43-45CB-AA36-E94020002D7E}</Project>
       <Name>Zones</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
