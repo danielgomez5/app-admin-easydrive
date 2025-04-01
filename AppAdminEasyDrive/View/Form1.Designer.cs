@@ -26,7 +26,6 @@ namespace AppAdminEasyDrive
             this.panelCabecera.Controls.Add(this.btnUsuaris);
             this.panelCabecera.Controls.Add(this.btnCoches);
             this.panelCabecera.Controls.Add(this.btnZones);
-            this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecera.Location = new System.Drawing.Point(0, 0);
             this.panelCabecera.Name = "panelCabecera";
             this.panelCabecera.Size = new System.Drawing.Size(1012, 168);
@@ -105,13 +104,13 @@ namespace AppAdminEasyDrive
             // 
             this.panelContenido.Location = new System.Drawing.Point(0, 157);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1012, 482);
+            this.panelContenido.Size = new System.Drawing.Size(1012, 605);
             this.panelContenido.TabIndex = 1;
             this.panelContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenido_Paint);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1012, 639);
+            this.ClientSize = new System.Drawing.Size(1012, 761);
             this.Controls.Add(this.panelCabecera);
             this.Controls.Add(this.panelContenido);
             this.Name = "Form1";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ZonaView));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.zonesDataGridView = new System.Windows.Forms.DataGridView();
@@ -39,14 +40,16 @@
             this.registerUsers = new System.Windows.Forms.Label();
             this.registerConductors = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.zonesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 28);
+            this.label1.Location = new System.Drawing.Point(68, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 34);
             this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
-            this.label2.Location = new System.Drawing.Point(105, 28);
+            this.label2.Location = new System.Drawing.Point(167, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 34);
             this.label2.TabIndex = 4;
@@ -119,9 +122,9 @@
             this.label4.Font = new System.Drawing.Font("DejaVu Sans Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 19);
+            this.label4.Size = new System.Drawing.Size(112, 19);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Filtra per";
+            this.label4.Text = "Filtra per 🔎";
             // 
             // registerUsers
             // 
@@ -148,6 +151,7 @@
             this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Font = new System.Drawing.Font("DejaVu Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
             this.editButton.Location = new System.Drawing.Point(13, 410);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(402, 51);
@@ -155,10 +159,22 @@
             this.editButton.Text = "Habilita el mode d\'edició ✎";
             this.editButton.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(17, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ZonaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.registerConductors);
             this.Controls.Add(this.registerUsers);
@@ -171,8 +187,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ZonaView";
-            this.Size = new System.Drawing.Size(1012, 551);
+            this.Size = new System.Drawing.Size(1012, 605);
             ((System.ComponentModel.ISupportInitialize)(this.zonesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +208,6 @@
         public System.Windows.Forms.Label registerUsers;
         public System.Windows.Forms.Label registerConductors;
         public System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

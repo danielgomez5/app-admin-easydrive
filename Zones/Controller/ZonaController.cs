@@ -15,18 +15,23 @@ namespace Zones.Controller
     {
         private ZonaView view = new ZonaView();
         private RepoZona rep = new RepoZona();
+        private bool isEditing = false;
 
         void setListeners()
         {
             view.searchTextBox.TextChanged += filtreZones;
-            view.editButton.Click += activarModeEdició;
+            view.editButton.Click += activarModeEdicio;
             view.zonesDataGridView.SelectionChanged += loadClientsAndTaxistes;
         }
 
         void loadData()
         {
             view.zonesDataGridView.DataSource = rep.GetAllZonas();
+            agregarColumnaEstat();
+        }
 
+        void agregarColumnaEstat()
+        {
             if (view.zonesDataGridView.Columns["Estat"] != null)
             {
                 view.zonesDataGridView.Columns.Remove("Estat");
@@ -52,78 +57,90 @@ namespace Zones.Controller
                 return;
             }
 
-            int filtrePer = 0;
-
-            if (view.rbCA.Checked)
-            {
-                filtrePer = 1;
-            }
-            else if (view.rbCiutat.Checked)
-            {
-                filtrePer = 2;
-            }
-            else if (view.rbProvincia.Checked)
-            {
-                filtrePer = 3;
-            }
+            int filtrePer = view.rbCA.Checked ? 1 :
+                            view.rbCiutat.Checked ? 2 :
+                            view.rbProvincia.Checked ? 3 : 0;
 
             view.zonesDataGridView.DataSource = rep.GetZonesByFiltre(filtre, filtrePer);
         }
 
-        void activarModeEdició(object sender, EventArgs e)
+        void activarModeEdicio(object sender, EventArgs e)
         {
-
-            bool isEditing = view.zonesDataGridView.ReadOnly;
+            isEditing = !isEditing;
             view.zonesDataGridView.ReadOnly = !isEditing;
+            view.editButton.ForeColor = isEditing ? Color.Black : Color.FromArgb(172, 151, 240);
 
-            // Cambiar el color del botón según el estado de edición
-            view.editButton.ForeColor = isEditing ? Color.FromArgb(172, 151, 240) : Color.Black;
-
-            // Si se deshabilita la edición, preguntar para guardar los cambios
-            if (!isEditing)
+            if (isEditing)
             {
-                updateZona();
+                afegirColumnaGuardar();
+            }
+            else
+            {
+                if (view.zonesDataGridView.Columns["Guardar"] != null)
+                {
+                    view.zonesDataGridView.CellClick -= guardarFila;
+                    view.zonesDataGridView.Columns.Remove("Guardar");
+                }
             }
         }
+
+        void afegirColumnaGuardar()
+        {
+            if (view.zonesDataGridView.Columns["Guardar"] == null)
+            {
+                DataGridViewButtonColumn btnGuardar = new DataGridViewButtonColumn();
+                btnGuardar.Name = "Guardar";
+                btnGuardar.HeaderText = "Acción";
+                btnGuardar.Text = "Guardar";
+                btnGuardar.UseColumnTextForButtonValue = true;
+
+                view.zonesDataGridView.Columns.Add(btnGuardar);
+
+                view.zonesDataGridView.CellClick -= guardarFila;
+                view.zonesDataGridView.CellClick += guardarFila;
+            }
+        }
+
+        void guardarFila(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == view.zonesDataGridView.Columns["Guardar"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = view.zonesDataGridView.Rows[e.RowIndex];
+
+                if (row.DataBoundItem is Zona zona)
+                {
+                    try
+                    {
+                        Zona updatedZona = new Zona
+                        {
+                            Id = zona.Id,
+                            ComunitatA = row.Cells["ComunitatA"].Value?.ToString() ?? zona.ComunitatA,
+                            Ciutat = row.Cells["Ciutat"].Value?.ToString() ?? zona.Ciutat,
+                            Provincia = row.Cells["Provincia"].Value?.ToString() ?? zona.Provincia,
+                            Estat = row.Cells["Estat"].Value != null ? (bool)row.Cells["Estat"].Value : zona.Estat,
+                            Pais = row.Cells["Pais"].Value?.ToString() ?? zona.Pais
+                        };
+
+                        rep.UpdateZona(updatedZona);
+
+                        MessageBox.Show($"Zona {updatedZona.Id} guardada correctament.", "Informació", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al actualitzar la zona {zona.Id}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
 
         void loadClientsAndTaxistes(object sender, EventArgs e)
         {
             if (view.zonesDataGridView.SelectedRows.Count > 0)
             {
                 Zona z = view.zonesDataGridView.SelectedRows[0].DataBoundItem as Zona;
-
-
                 view.registerConductors.Text = $"Taxistes registrats: {rep.GetCountTaxistesZona(z.Id)}";
                 view.registerUsers.Text = $"Usuaris registrats: {rep.GetCountUsuarisZona(z.Id)}";
-
-            }
-        }
-
-        void updateZona()
-        {
-            List<Zona> zonesActualitzades = new List<Zona>();
-
-            foreach (DataGridViewRow row in view.zonesDataGridView.Rows)
-            {
-                if (row.DataBoundItem is Zona zona)
-                {
-                    zonesActualitzades.Add(zona);
-                }
-            }
-
-            if (zonesActualitzades.Count > 0)
-            {
-                DialogResult result = MessageBox.Show("¿Vols desar els canvis?", "Confirmació", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    foreach (var zona in zonesActualitzades)
-                    {
-                        rep.UpdateZona(zona);
-                    }
-
-                    MessageBox.Show("Canvis desats correctament", "Informació", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
         }
 
@@ -132,8 +149,6 @@ namespace Zones.Controller
             setListeners();
             loadData();
         }
-
-
 
         public UserControl GetView()
         {

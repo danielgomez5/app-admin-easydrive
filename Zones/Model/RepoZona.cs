@@ -89,16 +89,24 @@ namespace Zones.Model
             return us.Count();
         }
 
-        //public void UpdateZona(Zona zona)
-        //{
-        //    try
-        //    {
-        //        Repositori.MakeRequest($"zona/{zona.Id}", "PUT", zona, typeof(Zona)).Wait();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error al actualizar la zona {zona.Id}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+        public Zona UpdateZona(Zona zona)
+        {
+            try
+            {
+                Zona updatedZona = (Zona)Repositori.MakeRequest($"zona/{zona.Id}", "PUT", zona, typeof(Zona)).Result;
+
+                if (updatedZona != null)
+                {
+                    return updatedZona;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualitzar la zona {zona.Id}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return zona;
+        }
+
     }
 }

@@ -17,6 +17,7 @@ namespace AppAdminEasyDrive.Controller
         {
             setListeners();
             Repositori.CreateHttpClient();
+            MostrarDashboard(null, null);
             Application.Run(f);
         }
 
