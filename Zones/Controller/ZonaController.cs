@@ -68,14 +68,18 @@ namespace Zones.Controller
         {
             isEditing = !isEditing;
             view.zonesDataGridView.ReadOnly = !isEditing;
-            view.editButton.ForeColor = isEditing ? Color.Black : Color.FromArgb(172, 151, 240);
+            view.zonesDataGridView.Columns["Id"].ReadOnly = true;
 
             if (isEditing)
             {
                 afegirColumnaGuardar();
+                view.editButton.BackColor = Color.FromArgb(97, 91, 113);
+                view.editButton.ForeColor = Color.White;
             }
             else
             {
+                view.editButton.BackColor = Color.Transparent;
+                view.editButton.ForeColor = Color.FromArgb(97, 91, 113);
                 if (view.zonesDataGridView.Columns["Guardar"] != null)
                 {
                     view.zonesDataGridView.CellClick -= guardarFila;

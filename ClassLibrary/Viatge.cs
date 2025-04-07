@@ -25,5 +25,8 @@ namespace ClassLibrary
         public int? IdReserva { get; set; }
 
         public string IdCotxe { get; set; }
+
+        public Reserva IdReservaNavigation { get; set; }
+        public Usuari IdTaxistaNavigation { get; set; }
     }
 }

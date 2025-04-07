@@ -41,6 +41,7 @@
             this.registerConductors = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.zonesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.label1.Location = new System.Drawing.Point(68, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 34);
@@ -59,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.label2.Location = new System.Drawing.Point(167, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 34);
@@ -68,13 +70,15 @@
             // 
             // zonesDataGridView
             // 
+            this.zonesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.zonesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.zonesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.zonesDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.zonesDataGridView.Location = new System.Drawing.Point(13, 124);
             this.zonesDataGridView.Name = "zonesDataGridView";
             this.zonesDataGridView.ReadOnly = true;
             this.zonesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.zonesDataGridView.Size = new System.Drawing.Size(975, 257);
+            this.zonesDataGridView.Size = new System.Drawing.Size(815, 257);
             this.zonesDataGridView.TabIndex = 5;
             // 
             // searchTextBox
@@ -120,6 +124,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("DejaVu Sans Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.label4.Location = new System.Drawing.Point(9, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 19);
@@ -129,29 +134,32 @@
             // registerUsers
             // 
             this.registerUsers.AutoSize = true;
-            this.registerUsers.Font = new System.Drawing.Font("DejaVu Sans Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerUsers.Location = new System.Drawing.Point(791, 410);
+            this.registerUsers.Font = new System.Drawing.Font("DejaVu Sans Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.registerUsers.Location = new System.Drawing.Point(847, 359);
             this.registerUsers.Name = "registerUsers";
-            this.registerUsers.Size = new System.Drawing.Size(163, 19);
+            this.registerUsers.Size = new System.Drawing.Size(189, 22);
             this.registerUsers.TabIndex = 12;
             this.registerUsers.Text = "Usuaris registrats:";
             // 
             // registerConductors
             // 
             this.registerConductors.AutoSize = true;
-            this.registerConductors.Font = new System.Drawing.Font("DejaVu Sans Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerConductors.Location = new System.Drawing.Point(585, 410);
+            this.registerConductors.Font = new System.Drawing.Font("DejaVu Sans Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerConductors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.registerConductors.Location = new System.Drawing.Point(847, 326);
             this.registerConductors.Name = "registerConductors";
-            this.registerConductors.Size = new System.Drawing.Size(168, 19);
+            this.registerConductors.Size = new System.Drawing.Size(196, 22);
             this.registerConductors.TabIndex = 13;
             this.registerConductors.Text = "Taxistes registrats:";
+            this.registerConductors.Click += new System.EventHandler(this.registerConductors_Click);
             // 
             // editButton
             // 
             this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editButton.Font = new System.Drawing.Font("DejaVu Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.editButton.Location = new System.Drawing.Point(13, 410);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(402, 51);
@@ -170,10 +178,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.panel1.Location = new System.Drawing.Point(840, 321);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 60);
+            this.panel1.TabIndex = 16;
+            // 
             // ZonaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.registerConductors);
@@ -187,7 +205,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ZonaView";
-            this.Size = new System.Drawing.Size(1012, 605);
+            this.Size = new System.Drawing.Size(1100, 605);
+            this.Load += new System.EventHandler(this.ZonaView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.zonesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -209,5 +228,6 @@
         public System.Windows.Forms.Label registerConductors;
         public System.Windows.Forms.Button editButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

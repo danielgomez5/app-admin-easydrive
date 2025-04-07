@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DashboardController.cs" />
+    <Compile Include="Model\RepoDashboard.cs" />
+    <Compile Include="Model\TaxistaDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\DashboardView.cs">
@@ -81,8 +83,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\" />
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{7AC9E2F7-0897-4CC1-97BA-22B925E7B605}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

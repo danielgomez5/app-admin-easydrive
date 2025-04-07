@@ -20,7 +20,7 @@ namespace AppAdminEasyDrive
             // 
             // panelCabecera
             // 
-            this.panelCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.panelCabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.panelCabecera.Controls.Add(this.btnDashboard);
             this.panelCabecera.Controls.Add(this.btnConductors);
             this.panelCabecera.Controls.Add(this.btnUsuaris);
@@ -28,7 +28,7 @@ namespace AppAdminEasyDrive
             this.panelCabecera.Controls.Add(this.btnZones);
             this.panelCabecera.Location = new System.Drawing.Point(0, 0);
             this.panelCabecera.Name = "panelCabecera";
-            this.panelCabecera.Size = new System.Drawing.Size(1012, 168);
+            this.panelCabecera.Size = new System.Drawing.Size(1097, 168);
             this.panelCabecera.TabIndex = 0;
             this.panelCabecera.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecera_Paint);
             // 
@@ -46,12 +46,13 @@ namespace AppAdminEasyDrive
             // 
             // btnConductors
             // 
-            this.btnConductors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.btnConductors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnConductors.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConductors.FlatAppearance.BorderSize = 0;
             this.btnConductors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConductors.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConductors.Location = new System.Drawing.Point(443, 12);
+            this.btnConductors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(68)))), ((int)(((byte)(88)))));
+            this.btnConductors.Location = new System.Drawing.Point(526, 12);
             this.btnConductors.Name = "btnConductors";
             this.btnConductors.Size = new System.Drawing.Size(255, 58);
             this.btnConductors.TabIndex = 0;
@@ -60,12 +61,13 @@ namespace AppAdminEasyDrive
             // 
             // btnUsuaris
             // 
-            this.btnUsuaris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.btnUsuaris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnUsuaris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuaris.FlatAppearance.BorderSize = 0;
             this.btnUsuaris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuaris.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnUsuaris.Location = new System.Drawing.Point(728, 12);
+            this.btnUsuaris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(68)))), ((int)(((byte)(88)))));
+            this.btnUsuaris.Location = new System.Drawing.Point(811, 12);
             this.btnUsuaris.Name = "btnUsuaris";
             this.btnUsuaris.Size = new System.Drawing.Size(255, 58);
             this.btnUsuaris.TabIndex = 1;
@@ -74,12 +76,13 @@ namespace AppAdminEasyDrive
             // 
             // btnCoches
             // 
-            this.btnCoches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.btnCoches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnCoches.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCoches.FlatAppearance.BorderSize = 0;
             this.btnCoches.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoches.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnCoches.Location = new System.Drawing.Point(443, 93);
+            this.btnCoches.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(68)))), ((int)(((byte)(88)))));
+            this.btnCoches.Location = new System.Drawing.Point(526, 93);
             this.btnCoches.Name = "btnCoches";
             this.btnCoches.Size = new System.Drawing.Size(255, 58);
             this.btnCoches.TabIndex = 2;
@@ -88,12 +91,13 @@ namespace AppAdminEasyDrive
             // 
             // btnZones
             // 
-            this.btnZones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.btnZones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnZones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZones.FlatAppearance.BorderSize = 0;
             this.btnZones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZones.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnZones.Location = new System.Drawing.Point(728, 93);
+            this.btnZones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(68)))), ((int)(((byte)(88)))));
+            this.btnZones.Location = new System.Drawing.Point(811, 93);
             this.btnZones.Name = "btnZones";
             this.btnZones.Size = new System.Drawing.Size(255, 58);
             this.btnZones.TabIndex = 3;
@@ -102,15 +106,16 @@ namespace AppAdminEasyDrive
             // 
             // panelContenido
             // 
+            this.panelContenido.BackColor = System.Drawing.Color.White;
             this.panelContenido.Location = new System.Drawing.Point(0, 157);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1012, 605);
+            this.panelContenido.Size = new System.Drawing.Size(1100, 605);
             this.panelContenido.TabIndex = 1;
             this.panelContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenido_Paint);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1012, 761);
+            this.ClientSize = new System.Drawing.Size(1084, 761);
             this.Controls.Add(this.panelCabecera);
             this.Controls.Add(this.panelContenido);
             this.Name = "Form1";
@@ -123,10 +128,10 @@ namespace AppAdminEasyDrive
 
         public Panel panelCabecera;
         public Panel panelContenido;
-        public Button btnConductors;
         public Button btnUsuaris;
         public Button btnCoches;
         public Button btnDashboard;
         public Button btnZones;
+        public Button btnConductors;
     }
 }

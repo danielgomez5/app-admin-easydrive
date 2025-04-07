@@ -26,5 +26,15 @@ namespace Zones.View
         {
 
         }
+
+        private void registerConductors_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ZonaView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

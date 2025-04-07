@@ -24,6 +24,8 @@ namespace ClassLibrary
 
         public double? HoresTreballades { get; set; }
 
-        public byte[] FotoFitxaTecnica { get; set; } = null;
+        public string FotoFitxaTecnica { get; set; } = null;
+
+        public List<Usuari> IdUsuaris { get; set; }
     }
 }

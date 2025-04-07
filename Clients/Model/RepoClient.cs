@@ -33,6 +33,65 @@ namespace Clients.Model
             return u;
         }
 
+        public List<Usuari> GetClientsByFiltre(string filtre, int filtrePer)
+        {
+            {
+                List<Usuari> us = null;
+                try
+                {
+                    us = (List<Usuari>)Repositori.MakeRequest($"usuaris-client/{filtre}/{filtrePer}", "GET", null, typeof(List<Usuari>)).Result;
+                }
+                catch
+                {
+                }
+                if (us == null)
+                {
+                    us = new List<Usuari>();
+                }
+
+                return us;
+            }
+        }
+
+        public DadesPagament GetDadesPagament(string id_usuari)
+        {
+            DadesPagament d = null;
+
+            try
+            {
+                d = (DadesPagament)Repositori.MakeRequest($"usuari-pagaments/{id_usuari}", "GET", null, typeof(DadesPagament)).Result;
+            }
+            catch
+            {
+            }
+
+            return d;
+        }
+
+        public List<Viatge> GetViatges(string id_usuari)
+        {
+            List<Viatge> viatges = null;
+            try
+            {
+                viatges = (List<Viatge>)Repositori.MakeRequest($"viatges-usuari/{id_usuari}", "GET", null, typeof(List<Viatge>)).Result;
+            }
+            catch
+            {
+            }
+            return viatges ?? new List<Viatge>();
+        }
+
+        public void DelClient(string id_usuari)
+        {
+            try
+            {
+                var result = (Usuari)Repositori.MakeRequest("usuari/" + id_usuari, "DELETE", null, typeof(Usuari)).Result;
+            }
+            catch (Exception e){
+                MessageBox.Show("Hi ha camps relacionals que no es poden eliminar, l'usuari haurà d'esborrar el seu compte desde l'app.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }

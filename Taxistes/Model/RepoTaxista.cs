@@ -14,7 +14,7 @@ namespace Taxistes.Model
         {
         }
 
-        public List<Usuari> GetAllClients()
+        public List<Usuari> GetAllTaxistes()
         {
             List<Usuari> u = null;
             try
@@ -31,6 +31,46 @@ namespace Taxistes.Model
             }
 
             return u;
+        }
+
+        public List<Usuari> GetTaxistesByFiltre(string filtre, int filtrePer)
+        {
+            {
+                List<Usuari> us = null;
+                try
+                {
+                    us = (List<Usuari>)Repositori.MakeRequest($"usuaris-taxista/{filtre}/{filtrePer}", "GET", null, typeof(List<Usuari>)).Result;
+                }
+                catch
+                {
+                }
+                if (us == null)
+                {
+                    us = new List<Usuari>();
+                }
+
+                return us;
+            }
+        }
+
+        public List<Cotxe> GetCotxesByTaxista(string id_taxista)
+        {
+            {
+                List<Cotxe> co = null;
+                try
+                {
+                    co = (List<Cotxe>)Repositori.MakeRequest($"cotxes-taxista/{id_taxista}", "GET", null, typeof(List<Cotxe>)).Result;
+                }
+                catch
+                {
+                }
+                if (co == null)
+                {
+                    co = new List<Cotxe>();
+                }
+
+                return co;
+            }
         }
     }
 }

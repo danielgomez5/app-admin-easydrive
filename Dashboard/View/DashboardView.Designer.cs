@@ -130,6 +130,8 @@
             this.top5DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.top5DataGridView.Location = new System.Drawing.Point(31, 368);
             this.top5DataGridView.Name = "top5DataGridView";
+            this.top5DataGridView.ReadOnly = true;
+            this.top5DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.top5DataGridView.Size = new System.Drawing.Size(504, 204);
             this.top5DataGridView.TabIndex = 9;
             // 
@@ -138,6 +140,8 @@
             this.reservesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservesDataGridView.Location = new System.Drawing.Point(31, 93);
             this.reservesDataGridView.Name = "reservesDataGridView";
+            this.reservesDataGridView.ReadOnly = true;
+            this.reservesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reservesDataGridView.Size = new System.Drawing.Size(504, 204);
             this.reservesDataGridView.TabIndex = 10;
             // 
@@ -185,6 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -198,7 +203,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "DashboardView";
-            this.Size = new System.Drawing.Size(1012, 605);
+            this.Size = new System.Drawing.Size(1100, 605);
             ((System.ComponentModel.ISupportInitialize)(this.zonesChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.top5DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservesDataGridView)).EndInit();
