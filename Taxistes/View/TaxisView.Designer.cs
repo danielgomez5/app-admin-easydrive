@@ -78,7 +78,8 @@
             // 
             // taxistesDataGridView
             // 
-            this.taxistesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.taxistesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.taxistesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.taxistesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
@@ -103,10 +104,11 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("DejaVu Sans Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
-            this.label4.Location = new System.Drawing.Point(386, 102);
+            this.label4.Location = new System.Drawing.Point(622, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 19);
             this.label4.TabIndex = 18;
@@ -114,7 +116,8 @@
             // 
             // filtreTextBox
             // 
-            this.filtreTextBox.Location = new System.Drawing.Point(518, 103);
+            this.filtreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtreTextBox.Location = new System.Drawing.Point(754, 99);
             this.filtreTextBox.Name = "filtreTextBox";
             this.filtreTextBox.Size = new System.Drawing.Size(209, 20);
             this.filtreTextBox.TabIndex = 17;
@@ -122,7 +125,7 @@
             // rbNom
             // 
             this.rbNom.AutoSize = true;
-            this.rbNom.Location = new System.Drawing.Point(191, 106);
+            this.rbNom.Location = new System.Drawing.Point(138, 106);
             this.rbNom.Name = "rbNom";
             this.rbNom.Size = new System.Drawing.Size(14, 13);
             this.rbNom.TabIndex = 16;
@@ -133,15 +136,17 @@
             // 
             this.rbDNI.AutoSize = true;
             this.rbDNI.Checked = true;
-            this.rbDNI.Location = new System.Drawing.Point(93, 106);
+            this.rbDNI.Location = new System.Drawing.Point(70, 106);
             this.rbDNI.Name = "rbDNI";
             this.rbDNI.Size = new System.Drawing.Size(14, 13);
             this.rbDNI.TabIndex = 15;
             this.rbDNI.TabStop = true;
             this.rbDNI.UseVisualStyleBackColor = true;
+            this.rbDNI.CheckedChanged += new System.EventHandler(this.rbDNI_CheckedChanged);
             // 
             // buttonCar
             // 
+            this.buttonCar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.buttonCar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -157,6 +162,7 @@
             // 
             // labelNomU
             // 
+            this.labelNomU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelNomU.AutoSize = true;
             this.labelNomU.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
@@ -168,6 +174,7 @@
             // 
             // labelCogU
             // 
+            this.labelCogU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelCogU.AutoSize = true;
             this.labelCogU.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCogU.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
@@ -179,6 +186,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(268, 532);
@@ -190,6 +198,7 @@
             // 
             // buttonFperfil
             // 
+            this.buttonFperfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonFperfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.buttonFperfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -205,6 +214,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(758, 532);
@@ -216,6 +226,7 @@
             // 
             // buttonFcarnet
             // 
+            this.buttonFcarnet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonFcarnet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.buttonFcarnet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFcarnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -231,6 +242,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(514, 532);

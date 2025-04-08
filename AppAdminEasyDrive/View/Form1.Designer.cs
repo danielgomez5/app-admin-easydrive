@@ -26,9 +26,10 @@ namespace AppAdminEasyDrive
             this.panelCabecera.Controls.Add(this.btnUsuaris);
             this.panelCabecera.Controls.Add(this.btnCoches);
             this.panelCabecera.Controls.Add(this.btnZones);
+            this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecera.Location = new System.Drawing.Point(0, 0);
             this.panelCabecera.Name = "panelCabecera";
-            this.panelCabecera.Size = new System.Drawing.Size(1097, 168);
+            this.panelCabecera.Size = new System.Drawing.Size(1084, 168);
             this.panelCabecera.TabIndex = 0;
             this.panelCabecera.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCabecera_Paint);
             // 
@@ -46,6 +47,7 @@ namespace AppAdminEasyDrive
             // 
             // btnConductors
             // 
+            this.btnConductors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConductors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnConductors.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConductors.FlatAppearance.BorderSize = 0;
@@ -61,6 +63,7 @@ namespace AppAdminEasyDrive
             // 
             // btnUsuaris
             // 
+            this.btnUsuaris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuaris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnUsuaris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsuaris.FlatAppearance.BorderSize = 0;
@@ -76,6 +79,7 @@ namespace AppAdminEasyDrive
             // 
             // btnCoches
             // 
+            this.btnCoches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCoches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnCoches.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCoches.FlatAppearance.BorderSize = 0;
@@ -91,6 +95,7 @@ namespace AppAdminEasyDrive
             // 
             // btnZones
             // 
+            this.btnZones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnZones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnZones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZones.FlatAppearance.BorderSize = 0;
@@ -107,9 +112,11 @@ namespace AppAdminEasyDrive
             // panelContenido
             // 
             this.panelContenido.BackColor = System.Drawing.Color.White;
-            this.panelContenido.Location = new System.Drawing.Point(0, 157);
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(0, 0);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1100, 605);
+            this.panelContenido.Padding = new System.Windows.Forms.Padding(0, 168, 0, 0);
+            this.panelContenido.Size = new System.Drawing.Size(1084, 761);
             this.panelContenido.TabIndex = 1;
             this.panelContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenido_Paint);
             // 

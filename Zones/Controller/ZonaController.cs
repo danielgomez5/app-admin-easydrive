@@ -22,6 +22,9 @@ namespace Zones.Controller
             view.searchTextBox.TextChanged += filtreZones;
             view.editButton.Click += activarModeEdicio;
             view.zonesDataGridView.SelectionChanged += loadClientsAndTaxistes;
+            view.rbCA.CheckedChanged += filtreZones;
+            view.rbCiutat.CheckedChanged += filtreZones;
+            view.rbProvincia.CheckedChanged += filtreZones;
         }
 
         void loadData()

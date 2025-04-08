@@ -26,5 +26,10 @@ namespace Dashboard.View
         {
 
         }
+
+        private void zonesChart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

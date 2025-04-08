@@ -21,5 +21,10 @@ namespace Taxistes.View
         {
 
         }
+
+        private void rbDNI_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

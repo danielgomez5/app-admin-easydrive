@@ -56,6 +56,8 @@
             // 
             // cotxesDataGridView
             // 
+            this.cotxesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cotxesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.cotxesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.cotxesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -89,10 +91,11 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("DejaVu Sans Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
-            this.label4.Location = new System.Drawing.Point(381, 98);
+            this.label4.Location = new System.Drawing.Point(647, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 19);
             this.label4.TabIndex = 22;
@@ -100,7 +103,8 @@
             // 
             // filtreTextBox
             // 
-            this.filtreTextBox.Location = new System.Drawing.Point(513, 99);
+            this.filtreTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtreTextBox.Location = new System.Drawing.Point(779, 95);
             this.filtreTextBox.Name = "filtreTextBox";
             this.filtreTextBox.Size = new System.Drawing.Size(209, 20);
             this.filtreTextBox.TabIndex = 21;
@@ -128,6 +132,7 @@
             // 
             // downloadButton
             // 
+            this.downloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.downloadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.downloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -142,6 +147,7 @@
             // 
             // taxistButton
             // 
+            this.taxistButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.taxistButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.taxistButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.taxistButton.Font = new System.Drawing.Font("DejaVu Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -29,6 +29,8 @@ namespace Clients.Controller
         void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreUsuaris;
+            view.rbDNI.CheckedChanged += filtreUsuaris;
+            view.rbNom.CheckedChanged += filtreUsuaris;
             view.clientsDataGridView.SelectionChanged += loadNomUsuariLabel;
             view.buttonPayments.Click += obreDadesPagament;
             view.buttonHistory.Click += obreHistorialViatges;

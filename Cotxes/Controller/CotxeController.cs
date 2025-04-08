@@ -25,6 +25,8 @@ namespace Cotxes.Controller
         void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreCotxes;
+            view.rbMatricula.CheckedChanged += filtreCotxes;
+            view.rbMarca.CheckedChanged += filtreCotxes;
             view.taxistButton.Click += obreFitxaConductors;
         }
 

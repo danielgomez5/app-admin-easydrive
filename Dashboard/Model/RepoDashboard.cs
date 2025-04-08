@@ -29,5 +29,37 @@ namespace Dashboard.Model
             return top5 ?? new List<TaxistaDTO>();
         }
 
+
+        public List<Reserva> GetReservesPendents()
+        {
+            List<Reserva> res = null;
+
+            try
+            {
+                res = (List<Reserva>)Repositori.MakeRequest("reserves-pendents/", "GET", null, typeof(List<Reserva>)).Result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return res ?? new List<Reserva>();
+        }
+
+        public List<ZonaDTO> GetTopZones()
+        {
+            List<ZonaDTO> zones = null;
+
+            try
+            {
+                zones = (List<ZonaDTO>)Repositori.MakeRequest("top-zones/", "GET", null, typeof(List<ZonaDTO>)).Result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return zones ?? new List<ZonaDTO>();
+        }
     }
 }

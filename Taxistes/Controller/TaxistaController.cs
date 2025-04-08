@@ -26,6 +26,8 @@ namespace Taxistes.Controller
         void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreTaxistes;
+            view.rbDNI.CheckedChanged += filtreTaxistes;
+            view.rbNom.CheckedChanged += filtreTaxistes;
             view.taxistesDataGridView.SelectionChanged += loadNomTaxistaLabel;
             view.buttonFperfil.Click += obreFotoPerfil;
             view.buttonCar.Click += obreCotxesRegistrats;
@@ -46,7 +48,7 @@ namespace Taxistes.Controller
         void filtreTaxistes(object sender, EventArgs e)
         {
             string filtre = view.filtreTextBox.Text;
-            if (string.IsNullOrEmpty(filtre))
+          if (string.IsNullOrEmpty(filtre))
             {
                 view.taxistesDataGridView.DataSource = rep.GetAllTaxistes();
                 return;

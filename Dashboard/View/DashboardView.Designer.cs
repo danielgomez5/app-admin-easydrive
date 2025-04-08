@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.label1.Location = new System.Drawing.Point(80, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 34);
@@ -66,10 +66,11 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
-            this.label5.Location = new System.Drawing.Point(630, 46);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
+            this.label5.Location = new System.Drawing.Point(670, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 34);
             this.label5.TabIndex = 4;
@@ -77,10 +78,11 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(730, 46);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.label6.Location = new System.Drawing.Point(770, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(263, 34);
             this.label6.TabIndex = 5;
@@ -90,6 +92,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.label7.Location = new System.Drawing.Point(80, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 34);
@@ -100,7 +103,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(151)))), ((int)(((byte)(240)))));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.label8.Location = new System.Drawing.Point(141, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(133, 34);
@@ -109,13 +112,16 @@
             // 
             // zonesChart
             // 
+            this.zonesChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.zonesChart.ChartAreas.Add(chartArea1);
+            this.zonesChart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             legend1.Name = "Legend1";
             this.zonesChart.Legends.Add(legend1);
-            this.zonesChart.Location = new System.Drawing.Point(574, 95);
+            this.zonesChart.Location = new System.Drawing.Point(614, 95);
             this.zonesChart.Name = "zonesChart";
-            this.zonesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.zonesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series1.Legend = "Legend1";
@@ -124,25 +130,34 @@
             this.zonesChart.Size = new System.Drawing.Size(419, 479);
             this.zonesChart.TabIndex = 8;
             this.zonesChart.Text = "chart1";
+            this.zonesChart.Click += new System.EventHandler(this.zonesChart_Click);
             // 
             // top5DataGridView
             // 
+            this.top5DataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.top5DataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
+            this.top5DataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.top5DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.top5DataGridView.Location = new System.Drawing.Point(31, 368);
             this.top5DataGridView.Name = "top5DataGridView";
             this.top5DataGridView.ReadOnly = true;
             this.top5DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.top5DataGridView.Size = new System.Drawing.Size(504, 204);
+            this.top5DataGridView.Size = new System.Drawing.Size(535, 204);
             this.top5DataGridView.TabIndex = 9;
             // 
             // reservesDataGridView
             // 
+            this.reservesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reservesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
+            this.reservesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.reservesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reservesDataGridView.Location = new System.Drawing.Point(31, 93);
             this.reservesDataGridView.Name = "reservesDataGridView";
             this.reservesDataGridView.ReadOnly = true;
             this.reservesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.reservesDataGridView.Size = new System.Drawing.Size(504, 204);
+            this.reservesDataGridView.Size = new System.Drawing.Size(535, 204);
             this.reservesDataGridView.TabIndex = 10;
             // 
             // pictureBox1
@@ -169,6 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.label4.Location = new System.Drawing.Point(226, 46);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 34);
@@ -177,8 +193,9 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(574, 37);
+            this.pictureBox3.Location = new System.Drawing.Point(614, 37);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

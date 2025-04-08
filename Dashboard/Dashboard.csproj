@@ -50,6 +50,7 @@
     <Compile Include="Controller\DashboardController.cs" />
     <Compile Include="Model\RepoDashboard.cs" />
     <Compile Include="Model\TaxistaDTO.cs" />
+    <Compile Include="Model\ZonaDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\DashboardView.cs">
