@@ -87,11 +87,10 @@ namespace Clients.Model
             {
                 var result = (Usuari)Repositori.MakeRequest("usuari/" + id_usuari, "DELETE", null, typeof(Usuari)).Result;
             }
-            catch (Exception e){
-                MessageBox.Show("Hi ha camps relacionals que no es poden eliminar, l'usuari haurà d'esborrar el seu compte desde l'app.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception e)
+            {
+                MessageBox.Show("Hi ha camps relacionals que no es poden eliminar, l'usuari haurà d'esborrar el seu compte desde l'app.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }

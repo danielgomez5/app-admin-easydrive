@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConductor));
             this.labelUsuari = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -40,9 +41,9 @@
             this.labelUsuari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.labelUsuari.Location = new System.Drawing.Point(253, 19);
             this.labelUsuari.Name = "labelUsuari";
-            this.labelUsuari.Size = new System.Drawing.Size(109, 34);
+            this.labelUsuari.Size = new System.Drawing.Size(95, 34);
             this.labelUsuari.TabIndex = 6;
-            this.labelUsuari.Text = "usuari";
+            this.labelUsuari.Text = "cotxe";
             // 
             // label1
             // 
@@ -73,6 +74,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.labelUsuari);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConductor";
             this.Text = "Conductor";
             this.ResumeLayout(false);

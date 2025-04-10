@@ -36,6 +36,8 @@ namespace Dashboard.Controller
             view.reservesDataGridView.Columns["Id"].Visible = false;
             view.reservesDataGridView.Columns["Estat"].Visible = false;
 
+            view.reservesDataGridView.Columns["DataReserva"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            view.reservesDataGridView.Columns["DataViatge"].DefaultCellStyle.Format = "dd/MM/yyyy";
             carregaGrafic();
         }
 

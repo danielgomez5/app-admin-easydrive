@@ -132,7 +132,6 @@
             // 
             // downloadButton
             // 
-            this.downloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.downloadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.downloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -156,7 +155,7 @@
             this.taxistButton.Name = "taxistButton";
             this.taxistButton.Size = new System.Drawing.Size(402, 51);
             this.taxistButton.TabIndex = 24;
-            this.taxistButton.Text = "Veure conductor 🚕";
+            this.taxistButton.Text = "Veure conductor(s) 🚕";
             this.taxistButton.UseVisualStyleBackColor = true;
             // 
             // CotxeView

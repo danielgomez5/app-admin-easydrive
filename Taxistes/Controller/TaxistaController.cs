@@ -30,6 +30,7 @@ namespace Taxistes.Controller
             view.rbNom.CheckedChanged += filtreTaxistes;
             view.taxistesDataGridView.SelectionChanged += loadNomTaxistaLabel;
             view.buttonFperfil.Click += obreFotoPerfil;
+            view.buttonFcarnet.Click += obreFotoCarnet;
             view.buttonCar.Click += obreCotxesRegistrats;
             view.taxistesDataGridView.CellFormatting += FormatDisponibilitat;
 
@@ -66,17 +67,37 @@ namespace Taxistes.Controller
             {
                 Usuari u = view.taxistesDataGridView.SelectedRows[0].DataBoundItem as Usuari;
 
-                //using (MemoryStream ms = new MemoryStream(u.FotoPerfil))
-                //{
-                //    Image imagen = Image.FromStream(ms);
+                if (!string.IsNullOrEmpty(u.FotoPerfil))
+                {
+                    FotoPerfForm f = new FotoPerfForm();
+                    f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoPerfil);
+                    f.Name = "Foto perfil";
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"El taxista amb DNI {u.Dni} no té foto de perfil", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
 
-                //    FotoPerfForm f = new FotoPerfForm();
+        void obreFotoCarnet(object sender, EventArgs e)
+        {
+            if (view.taxistesDataGridView.SelectedRows.Count > 0)
+            {
+                Usuari u = view.taxistesDataGridView.SelectedRows[0].DataBoundItem as Usuari;
 
-                //    f.pictureBox1.Image = imagen;
-
-                //    f.ShowDialog();
-
-                //}
+                if (!string.IsNullOrEmpty(u.FotoCarnet))
+                {
+                    FotoPerfForm f = new FotoPerfForm();
+                    f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoCarnet);
+                    f.Name = "Foto carnet";
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show($"El taxista amb DNI {u.Dni} no té foto de carnet", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -95,7 +116,7 @@ namespace Taxistes.Controller
 
                     f.labelUsuari.Text = $"{u.Nom} {u.Cognom}";
 
-                    f.ShowDialog();
+                    f.Show();
                 }
                 else
                 {

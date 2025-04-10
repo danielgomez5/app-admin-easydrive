@@ -80,7 +80,7 @@ namespace Clients.Controller
                     f.dniLetLabel.Text = u.Dni.Substring(u.Dni.Length - 1);
 
 
-                    f.ShowDialog();
+                    f.Show();
                 }
                 else
                 {
@@ -179,7 +179,6 @@ namespace Clients.Controller
             {
                 Width = 180,
                 Height = 200,
-                //Image = viatge.IdTaxistaNavigation.FotoPerfil,
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 BorderStyle = BorderStyle.FixedSingle
             };
@@ -197,6 +196,11 @@ namespace Clients.Controller
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
             };
+
+            if (viatge.IdTaxistaNavigation?.FotoPerfil != null)
+            {
+                picConductor.Load("http://localhost:7126/Photos/" + viatge.IdTaxistaNavigation.FotoPerfil);
+            }
 
             card.Controls.Add(lblRuta);
             card.Controls.Add(lblFecha);

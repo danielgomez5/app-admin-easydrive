@@ -154,9 +154,9 @@
             this.buttonCar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.buttonCar.Location = new System.Drawing.Point(310, 532);
             this.buttonCar.Name = "buttonCar";
-            this.buttonCar.Size = new System.Drawing.Size(163, 40);
+            this.buttonCar.Size = new System.Drawing.Size(175, 40);
             this.buttonCar.TabIndex = 19;
-            this.buttonCar.Text = "Veure cotxe";
+            this.buttonCar.Text = "Veure cotxe(s)";
             this.buttonCar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCar.UseVisualStyleBackColor = false;
             // 
@@ -204,7 +204,7 @@
             this.buttonFperfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFperfil.Font = new System.Drawing.Font("DejaVu Sans Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFperfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
-            this.buttonFperfil.Location = new System.Drawing.Point(555, 532);
+            this.buttonFperfil.Location = new System.Drawing.Point(558, 532);
             this.buttonFperfil.Name = "buttonFperfil";
             this.buttonFperfil.Size = new System.Drawing.Size(163, 40);
             this.buttonFperfil.TabIndex = 25;
@@ -245,7 +245,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(514, 532);
+            this.pictureBox3.Location = new System.Drawing.Point(517, 532);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

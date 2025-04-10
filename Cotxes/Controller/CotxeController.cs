@@ -4,7 +4,9 @@ using Cotxes.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,16 +24,57 @@ namespace Cotxes.Controller
             loadData();
         }
 
-        void setListeners()
+        private void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreCotxes;
             view.rbMatricula.CheckedChanged += filtreCotxes;
             view.rbMarca.CheckedChanged += filtreCotxes;
             view.taxistButton.Click += obreFitxaConductors;
+            view.downloadButton.Click += descarregaFitxa;
+        }
+
+        private void descarregaFitxa(object sender, EventArgs e)
+        {
+            if (view.cotxesDataGridView.SelectedRows.Count > 0)
+            {
+                Cotxe cotxe = view.cotxesDataGridView.SelectedRows[0].DataBoundItem as Cotxe;
+
+                if (!string.IsNullOrEmpty(cotxe?.FotoFitxaTecnica))
+                {
+                    string fileName = cotxe.FotoFitxaTecnica;
+                    string fileUrl = $"http://localhost:7126/Files/{fileName}";
+
+                    // Definir la carpeta predeterminada para la descarga (por ejemplo, "Documentos")
+                    string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+                    Directory.CreateDirectory(folderPath); // Crear la carpeta si no existe
+
+                    // Combina la ruta con el nombre del archivo
+                    string destinationPath = Path.Combine(folderPath, fileName);
+
+                    try
+                    {
+                        using (WebClient client = new WebClient())
+                        {
+                            client.DownloadFile(fileUrl, destinationPath);
+                        }
+
+                        MessageBox.Show("Fitxa descarregada correctament!", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al descarregar la fitxa: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Aquest cotxe no té fitxa tècnica.", "Informació", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
 
-        void filtreCotxes(object sender, EventArgs e)
+
+        private void filtreCotxes(object sender, EventArgs e)
         {
             string filtre = view.filtreTextBox.Text;
             if (string.IsNullOrEmpty(filtre))
@@ -46,7 +89,7 @@ namespace Cotxes.Controller
             view.cotxesDataGridView.DataSource = rep.GetCotxesByFiltre(filtre, filtrePer);
         }
 
-        void obreFitxaConductors(object sender, EventArgs e)
+        private void obreFitxaConductors(object sender, EventArgs e)
         {
             if (view.cotxesDataGridView.SelectedRows.Count > 0)
             {
@@ -93,7 +136,7 @@ namespace Cotxes.Controller
 
             Label lblTitol = new Label
             {
-                Text = $"{conductor.Dni} - Conductor {conductor.Cognom}",
+                Text = $"{conductor.Dni} - {conductor.Nom} {conductor.Cognom}",
                 Font = new Font("DejaVu Sans Condensed", 16F, FontStyle.Bold),
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
@@ -147,8 +190,10 @@ namespace Cotxes.Controller
                 BorderStyle = BorderStyle.FixedSingle
             };
 
-            // Si tienes la imagen base64 o en ruta, podrías hacer algo así:
-            // picConductor.Image = Image.FromFile(conductor.FotoPerfil);
+            if (conductor.FotoPerfil != null)
+            {
+                picConductor.Load("http://localhost:7126/Photos/" + conductor.FotoPerfil);
+            }
 
             // Añadir controles
             card.Controls.Add(lblTitol);
@@ -178,7 +223,7 @@ namespace Cotxes.Controller
         }
 
 
-        void loadData() 
+        private void loadData() 
         {
             view.cotxesDataGridView.DataSource = rep.GetAllCotxes();
             view.cotxesDataGridView.Columns["FotoFitxaTecnica"].Visible = false;

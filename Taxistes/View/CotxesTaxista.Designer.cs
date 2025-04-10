@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CotxesTaxista));
             this.labelUsuari = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,6 +74,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.labelUsuari);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CotxesTaxista";
             this.Text = "Cotxes registrats";
             this.ResumeLayout(false);

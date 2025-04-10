@@ -37,6 +37,7 @@ namespace AppAdminEasyDrive
             // 
             this.btnDashboard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDashboard.BackgroundImage")));
             this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.Enabled = false;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -50,6 +51,7 @@ namespace AppAdminEasyDrive
             this.btnConductors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConductors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnConductors.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConductors.Enabled = false;
             this.btnConductors.FlatAppearance.BorderSize = 0;
             this.btnConductors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConductors.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +68,7 @@ namespace AppAdminEasyDrive
             this.btnUsuaris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuaris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnUsuaris.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsuaris.Enabled = false;
             this.btnUsuaris.FlatAppearance.BorderSize = 0;
             this.btnUsuaris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuaris.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -82,6 +85,7 @@ namespace AppAdminEasyDrive
             this.btnCoches.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCoches.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnCoches.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCoches.Enabled = false;
             this.btnCoches.FlatAppearance.BorderSize = 0;
             this.btnCoches.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCoches.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -98,6 +102,7 @@ namespace AppAdminEasyDrive
             this.btnZones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnZones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.btnZones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZones.Enabled = false;
             this.btnZones.FlatAppearance.BorderSize = 0;
             this.btnZones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZones.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
@@ -125,6 +130,7 @@ namespace AppAdminEasyDrive
             this.ClientSize = new System.Drawing.Size(1084, 761);
             this.Controls.Add(this.panelCabecera);
             this.Controls.Add(this.panelContenido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "App Admin Easy Drive";
             this.Load += new System.EventHandler(this.Form1_Load);
