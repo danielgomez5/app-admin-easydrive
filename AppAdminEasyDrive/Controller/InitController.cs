@@ -1,4 +1,5 @@
-﻿using AppAdminEasyDrive.Model;
+﻿using APIProjecte.Models;
+using AppAdminEasyDrive.Model;
 using AppAdminEasyDrive.View;
 using ClassLibrary;
 using Clients.Controller;
@@ -16,11 +17,11 @@ namespace AppAdminEasyDrive.Controller
     public class InitController
     {
         Form1 f = new Form1();
-
+        FormAccount fAcc = new FormAccount();
         public InitController()
         {
-            setListeners();
             Repositori.CreateHttpClient();
+            setListeners();
             MostrarLogin();
             Application.Run(f);
         }
@@ -32,6 +33,7 @@ namespace AppAdminEasyDrive.Controller
             f.btnCoches.Click += MostrarCotxes;
             f.btnZones.Click += MostrarZones;
             f.btnDashboard.Click += MostrarDashboard;
+            f.accButton.Click += MyAccount;
         }
 
         private void MostrarClients(object sender, EventArgs e)
@@ -83,6 +85,7 @@ namespace AppAdminEasyDrive.Controller
             string password = vista.passTextBox.Text;
 
             RepoLogin rep = new RepoLogin();
+            Repositori.CreateHttpClient();
             Usuari usuari = rep.LoginUsuari(email, password);
 
             if (usuari == null)
@@ -104,7 +107,63 @@ namespace AppAdminEasyDrive.Controller
             f.btnDashboard.Enabled = true;
             f.btnUsuaris.Enabled = true;
             f.btnZones.Enabled = true;
+            f.accButton.Enabled = true;
             MostrarDashboard(null, null);
+        }
+
+        private void MyAccount(object sender, EventArgs e)
+        {
+            FormAccount fAcc = new FormAccount();
+            fAcc.Show();
+            fAcc.changePassButton.Click += ChangePassword;
+            fAcc.logoutButton.Click += Logout;
+        }
+
+        private void ChangePassword(object sender, EventArgs e)
+        {
+            string pass = fAcc.passTextBox.Text;
+            string pass2 = fAcc.pass2TextBox.Text;
+
+            if (pass.Length < 6 || pass2.Length < 6)
+            {
+                MessageBox.Show("La contrasenya ha de tenir almenys 6 caràcters.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!pass.Equals(pass2))
+            {
+                MessageBox.Show("Les contrasenyes no coincideixen.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ChangePasswordRequest passRequest = new ChangePasswordRequest{ 
+                NovaContrasenya = pass
+            };
+
+            try
+            {
+                RepoLogin rep = new RepoLogin();
+                rep.ChangePassword(passRequest);
+                MessageBox.Show("Contrasenya canviada correctament.", "Informació", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Error en canviar la contrasenya", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Logout(object sender, EventArgs e)
+        {
+            Repositori.ClearHttpClient();
+            fAcc.Close();
+            f.btnCoches.Enabled = false;
+            f.btnConductors.Enabled = false;
+            f.btnDashboard.Enabled = false;
+            f.btnUsuaris.Enabled = false;
+            f.btnZones.Enabled = false;
+            f.accButton.Enabled = false;
+            
+            MostrarLogin();
         }
 
         private void CargarVista(UserControl vista)
@@ -113,5 +172,6 @@ namespace AppAdminEasyDrive.Controller
             vista.Dock = DockStyle.Fill;
             f.panelContenido.Controls.Add(vista);
         }
+
     }
 }

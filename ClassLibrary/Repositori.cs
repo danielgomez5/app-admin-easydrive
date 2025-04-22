@@ -22,6 +22,15 @@ namespace ClassLibrary
             httpClient.DefaultRequestHeaders.Add("Accept", contentType);
         }
 
+        public static void ClearHttpClient()
+        {
+            if (httpClient != null)
+            {
+                httpClient.Dispose();
+                httpClient = null;
+            }
+        }
+
         public static async Task<object> MakeRequest(string url, string method, object JSONcontent, Type responseType)
         {
             HttpResponseMessage response;

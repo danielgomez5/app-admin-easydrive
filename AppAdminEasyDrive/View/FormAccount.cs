@@ -8,26 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppAdminEasyDrive
+namespace AppAdminEasyDrive.View
 {
-    public partial class Form1: Form
+    public partial class FormAccount : Form
     {
-        public Form1()
+        public FormAccount()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelContenido_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelCabecera_Paint(object sender, PaintEventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -37,7 +27,7 @@ namespace AppAdminEasyDrive
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

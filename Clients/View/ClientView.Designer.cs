@@ -105,11 +105,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("DejaVu Sans Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("DejaVu Sans Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
             this.label3.Location = new System.Drawing.Point(767, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(213, 31);
+            this.label3.Size = new System.Drawing.Size(192, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Accions contra";
             // 
@@ -128,11 +128,11 @@
             // 
             this.labelUsuari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelUsuari.AutoSize = true;
-            this.labelUsuari.Font = new System.Drawing.Font("DejaVu Sans Condensed", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuari.Font = new System.Drawing.Font("DejaVu Sans Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
-            this.labelUsuari.Location = new System.Drawing.Point(768, 175);
+            this.labelUsuari.Location = new System.Drawing.Point(770, 173);
             this.labelUsuari.Name = "labelUsuari";
-            this.labelUsuari.Size = new System.Drawing.Size(98, 31);
+            this.labelUsuari.Size = new System.Drawing.Size(75, 24);
             this.labelUsuari.TabIndex = 6;
             this.labelUsuari.Text = "usuari";
             this.labelUsuari.Click += new System.EventHandler(this.label4_Click);
