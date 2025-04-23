@@ -113,7 +113,7 @@
             this.changePassButton.Name = "changePassButton";
             this.changePassButton.Size = new System.Drawing.Size(191, 50);
             this.changePassButton.TabIndex = 10;
-            this.changePassButton.Text = "Caniva la contrasenya";
+            this.changePassButton.Text = "Canvia la contrasenya";
             this.changePassButton.UseVisualStyleBackColor = false;
             this.changePassButton.Click += new System.EventHandler(this.button1_Click);
             // 

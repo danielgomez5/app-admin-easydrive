@@ -16,8 +16,8 @@ namespace AppAdminEasyDrive.Controller
 {
     public class InitController
     {
-        Form1 f = new Form1();
-        FormAccount fAcc = new FormAccount();
+        private Form1 f = new Form1();
+        private FormAccount fAcc;
         public InitController()
         {
             Repositori.CreateHttpClient();
@@ -113,10 +113,19 @@ namespace AppAdminEasyDrive.Controller
 
         private void MyAccount(object sender, EventArgs e)
         {
-            FormAccount fAcc = new FormAccount();
+            if (fAcc == null || fAcc.IsDisposed)
+            {
+                fAcc = new FormAccount();
+
+                fAcc.changePassButton.Click -= ChangePassword;
+                fAcc.changePassButton.Click += ChangePassword;
+
+                fAcc.logoutButton.Click -= Logout;
+                fAcc.logoutButton.Click += Logout;
+            }
+
             fAcc.Show();
-            fAcc.changePassButton.Click += ChangePassword;
-            fAcc.logoutButton.Click += Logout;
+            fAcc.BringToFront();
         }
 
         private void ChangePassword(object sender, EventArgs e)

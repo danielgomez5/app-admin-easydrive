@@ -44,11 +44,9 @@ namespace Cotxes.Controller
                     string fileName = cotxe.FotoFitxaTecnica;
                     string fileUrl = $"http://localhost:7126/Files/{fileName}";
 
-                    // Definir la carpeta predeterminada para la descarga (por ejemplo, "Documentos")
                     string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
-                    Directory.CreateDirectory(folderPath); // Crear la carpeta si no existe
+                    Directory.CreateDirectory(folderPath);
 
-                    // Combina la ruta con el nombre del archivo
                     string destinationPath = Path.Combine(folderPath, fileName);
 
                     try
@@ -62,7 +60,7 @@ namespace Cotxes.Controller
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error al descarregar la fitxa: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Error al descarregar la fitxa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -227,6 +225,7 @@ namespace Cotxes.Controller
         {
             view.cotxesDataGridView.DataSource = rep.GetAllCotxes();
             view.cotxesDataGridView.Columns["FotoFitxaTecnica"].Visible = false;
+            view.cotxesDataGridView.Columns["HoresTreballades"].HeaderText = "Hores de conducció";
         }
 
         public UserControl GetView()
