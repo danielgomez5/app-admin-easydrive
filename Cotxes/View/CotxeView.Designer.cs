@@ -39,8 +39,12 @@
             this.rbMatricula = new System.Windows.Forms.RadioButton();
             this.downloadButton = new System.Windows.Forms.Button();
             this.taxistButton = new System.Windows.Forms.Button();
+            this.labelMat = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.cotxesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +60,8 @@
             // 
             // cotxesDataGridView
             // 
-            this.cotxesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cotxesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cotxesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(222)))), ((int)(((byte)(248)))));
             this.cotxesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -132,6 +137,7 @@
             // 
             // downloadButton
             // 
+            this.downloadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.downloadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
             this.downloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,7 +152,7 @@
             // 
             // taxistButton
             // 
-            this.taxistButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.taxistButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.taxistButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.taxistButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.taxistButton.Font = new System.Drawing.Font("DejaVu Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,11 +164,46 @@
             this.taxistButton.Text = "Veure conductor(s) 🚕";
             this.taxistButton.UseVisualStyleBackColor = true;
             // 
+            // labelMat
+            // 
+            this.labelMat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelMat.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.labelMat.Location = new System.Drawing.Point(1018, 249);
+            this.labelMat.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.labelMat.Name = "labelMat";
+            this.labelMat.Size = new System.Drawing.Size(37, 243);
+            this.labelMat.TabIndex = 31;
+            this.labelMat.Text = "6281DBA";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1009, 197);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
+            this.panel1.Location = new System.Drawing.Point(996, 197);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 295);
+            this.panel1.TabIndex = 33;
+            // 
             // CotxeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.labelMat);
             this.Controls.Add(this.taxistButton);
             this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.label4);
@@ -177,6 +218,7 @@
             this.Size = new System.Drawing.Size(1100, 605);
             ((System.ComponentModel.ISupportInitialize)(this.cotxesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +236,8 @@
         public System.Windows.Forms.RadioButton rbMatricula;
         public System.Windows.Forms.Button downloadButton;
         public System.Windows.Forms.Button taxistButton;
+        public System.Windows.Forms.Label labelMat;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

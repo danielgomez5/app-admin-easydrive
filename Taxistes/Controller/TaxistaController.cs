@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,7 @@ namespace Taxistes.Controller
             loadData();
         }
 
-        void setListeners()
+        private void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreTaxistes;
             view.rbDNI.CheckedChanged += filtreTaxistes;
@@ -36,7 +37,7 @@ namespace Taxistes.Controller
 
         }
 
-        void loadNomTaxistaLabel(object sender, EventArgs e)
+        private void loadNomTaxistaLabel(object sender, EventArgs e)
         {
             if (view.taxistesDataGridView.SelectedRows.Count > 0)
             {
@@ -46,7 +47,7 @@ namespace Taxistes.Controller
             }
         }
 
-        void filtreTaxistes(object sender, EventArgs e)
+        private void filtreTaxistes(object sender, EventArgs e)
         {
             string filtre = view.filtreTextBox.Text;
           if (string.IsNullOrEmpty(filtre))
@@ -61,7 +62,7 @@ namespace Taxistes.Controller
             view.taxistesDataGridView.DataSource = rep.GetTaxistesByFiltre(filtre, filtrePer);
         }
 
-        void obreFotoPerfil(object sender, EventArgs e)
+        private void obreFotoPerfil(object sender, EventArgs e)
         {
             if (view.taxistesDataGridView.SelectedRows.Count > 0)
             {
@@ -71,7 +72,7 @@ namespace Taxistes.Controller
                 {
                     FotoPerfForm f = new FotoPerfForm();
                     f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoPerfil);
-                    f.Name = "Foto perfil";
+                    f.Text = "Foto perfil";
                     f.Show();
                 }
                 else
@@ -81,7 +82,7 @@ namespace Taxistes.Controller
             }
         }
 
-        void obreFotoCarnet(object sender, EventArgs e)
+        private void obreFotoCarnet(object sender, EventArgs e)
         {
             if (view.taxistesDataGridView.SelectedRows.Count > 0)
             {
@@ -91,7 +92,7 @@ namespace Taxistes.Controller
                 {
                     FotoPerfForm f = new FotoPerfForm();
                     f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoCarnet);
-                    f.Name = "Foto carnet";
+                    f.Text = "Foto carnet";
                     f.Show();
                 }
                 else
@@ -101,7 +102,7 @@ namespace Taxistes.Controller
             }
         }
 
-        void obreCotxesRegistrats(object sender, EventArgs e)
+        private void obreCotxesRegistrats(object sender, EventArgs e)
         {
 
             if (view.taxistesDataGridView.SelectedRows.Count > 0)
@@ -227,18 +228,27 @@ namespace Taxistes.Controller
                 return;
             }
 
-            //using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-            //{
-            //    saveFileDialog.Filter = "PDF Files|*.pdf|All Files|*.*";
-            //    saveFileDialog.Title = "Desar fitxa tècnica";
-            //    saveFileDialog.FileName = $"{cotxe.Matricula}_FitxaTecnica.pdf";
+            string fileName = cotxe.FotoFitxaTecnica;
+            string fileUrl = $"http://localhost:7126/Files/{fileName}";
 
-            //    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //    {
-            //        File.WriteAllBytes(saveFileDialog.FileName, cotxe.FotoFitxaTecnica);
-            //        MessageBox.Show("Document desat correctament!", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            Directory.CreateDirectory(folderPath);
+
+            string destinationPath = Path.Combine(folderPath, fileName);
+
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    client.DownloadFile(fileUrl, destinationPath);
+                }
+
+                MessageBox.Show("Fitxa descarregada correctament! (Desada a Documents)", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al descarregar la fitxa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FormatDisponibilitat(object sender, DataGridViewCellFormattingEventArgs e)
@@ -254,7 +264,7 @@ namespace Taxistes.Controller
             }
         }
 
-        void loadData()
+        private void loadData()
         {
             view.taxistesDataGridView.DataSource = rep.GetAllTaxistes();
 

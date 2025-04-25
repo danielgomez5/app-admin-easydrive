@@ -73,6 +73,8 @@ namespace AppAdminEasyDrive.Controller
             vista.Dock = DockStyle.Fill;
             f.panelContenido.Controls.Add(vista);
 
+            vista.mailTextBox.KeyDown += Login_KeyDown;
+            vista.passTextBox.KeyDown += Login_KeyDown;
             vista.buttonEntrar.Click += Login;
         }
 
@@ -109,6 +111,14 @@ namespace AppAdminEasyDrive.Controller
             f.btnZones.Enabled = true;
             f.accButton.Enabled = true;
             MostrarDashboard(null, null);
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login(sender, e);
+            }
         }
 
         private void MyAccount(object sender, EventArgs e)

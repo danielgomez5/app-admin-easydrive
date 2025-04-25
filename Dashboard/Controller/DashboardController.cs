@@ -21,13 +21,12 @@ namespace Dashboard.Controller
             setListeners();
             loadData();
         }
-        void setListeners()
+
+        private void setListeners()
         {
             
         }
-
-
-        void loadData()
+        private void loadData()
         {
             view.top5DataGridView.DataSource = rep.GetTop5Taxistes();
             view.reservesDataGridView.DataSource = rep.GetReservesPendents();
@@ -41,7 +40,7 @@ namespace Dashboard.Controller
             carregaGrafic();
         }
 
-        void carregaGrafic()
+        private void carregaGrafic()
         {
             List<ZonaDTO> zones = rep.GetTopZones();
 
@@ -89,9 +88,6 @@ namespace Dashboard.Controller
             view.zonesChart.ChartAreas[0].Area3DStyle.Enable3D = false;
             view.zonesChart.ChartAreas[0].BackColor = Color.Transparent;
         }
-
-
-
 
         public UserControl GetView()
         {

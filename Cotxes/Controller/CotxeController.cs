@@ -31,6 +31,7 @@ namespace Cotxes.Controller
             view.rbMarca.CheckedChanged += filtreCotxes;
             view.taxistButton.Click += obreFitxaConductors;
             view.downloadButton.Click += descarregaFitxa;
+            view.cotxesDataGridView.SelectionChanged += labelMatricula;
         }
 
         private void descarregaFitxa(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace Cotxes.Controller
                             client.DownloadFile(fileUrl, destinationPath);
                         }
 
-                        MessageBox.Show("Fitxa descarregada correctament!", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Fitxa descarregada correctament! (Desada a Documents)", "Èxit", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -70,7 +71,14 @@ namespace Cotxes.Controller
             }
         }
 
-
+        private void labelMatricula(object sender, EventArgs e)
+        {
+            if (view.cotxesDataGridView.SelectedRows.Count > 0)
+            {
+                Cotxe cotxe = view.cotxesDataGridView.SelectedRows[0].DataBoundItem as Cotxe;
+                view.labelMat.Text = cotxe.Matricula;
+            } 
+        }
 
         private void filtreCotxes(object sender, EventArgs e)
         {

@@ -93,7 +93,7 @@ namespace AppAdminEasyDrive
             this.btnUsuaris.Name = "btnUsuaris";
             this.btnUsuaris.Size = new System.Drawing.Size(255, 58);
             this.btnUsuaris.TabIndex = 1;
-            this.btnUsuaris.Text = "Usuaris";
+            this.btnUsuaris.Text = "Clients";
             this.btnUsuaris.UseVisualStyleBackColor = false;
             // 
             // btnCoches

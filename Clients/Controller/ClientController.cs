@@ -26,7 +26,7 @@ namespace Clients.Controller
             
         }
 
-        void setListeners()
+        private void setListeners()
         {
             view.filtreTextBox.TextChanged += filtreUsuaris;
             view.rbDNI.CheckedChanged += filtreUsuaris;
@@ -37,7 +37,7 @@ namespace Clients.Controller
             view.delButton.Click += eliminaUsuaris;
         }
 
-        void loadNomUsuariLabel(object sender, EventArgs e)
+        private void loadNomUsuariLabel(object sender, EventArgs e)
         {
             if (view.clientsDataGridView.SelectedRows.Count > 0 )
             {
@@ -46,7 +46,7 @@ namespace Clients.Controller
             }
         }
 
-        void filtreUsuaris(object sender, EventArgs e)
+        private void filtreUsuaris(object sender, EventArgs e)
         {
             string filtre = view.filtreTextBox.Text;
             if (string.IsNullOrEmpty(filtre))
@@ -61,7 +61,7 @@ namespace Clients.Controller
             view.clientsDataGridView.DataSource = rep.GetClientsByFiltre(filtre, filtrePer);
         }
 
-        void obreDadesPagament(object sender, EventArgs e)
+        private void obreDadesPagament(object sender, EventArgs e)
         {
             if (view.clientsDataGridView.SelectedRows.Count > 0)
             {
@@ -89,7 +89,7 @@ namespace Clients.Controller
             }
         }
 
-        void obreHistorialViatges(object sender, EventArgs e)
+        private void obreHistorialViatges(object sender, EventArgs e)
         {
 
             if (view.clientsDataGridView.SelectedRows.Count > 0)
@@ -243,7 +243,7 @@ namespace Clients.Controller
                 return card;
         }
 
-        void eliminaUsuaris(object sender, EventArgs e)
+        private void eliminaUsuaris(object sender, EventArgs e)
         {
             if (view.clientsDataGridView.SelectedRows.Count > 0)
             {
@@ -273,7 +273,7 @@ namespace Clients.Controller
             }
         }
 
-        void loadData()
+        private void loadData()
         {
             view.clientsDataGridView.DataSource = rep.GetAllClients();
 

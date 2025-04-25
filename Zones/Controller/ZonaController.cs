@@ -17,7 +17,7 @@ namespace Zones.Controller
         private RepoZona rep = new RepoZona();
         private bool isEditing = false;
 
-        void setListeners()
+        private void setListeners()
         {
             view.searchTextBox.TextChanged += filtreZones;
             view.editButton.Click += activarModeEdicio;
@@ -27,13 +27,13 @@ namespace Zones.Controller
             view.rbProvincia.CheckedChanged += filtreZones;
         }
 
-        void loadData()
+        private void loadData()
         {
             view.zonesDataGridView.DataSource = rep.GetAllZonas();
             agregarColumnaEstat();
         }
 
-        void agregarColumnaEstat()
+        private void agregarColumnaEstat()
         {
             if (view.zonesDataGridView.Columns["Estat"] != null)
             {
@@ -51,7 +51,7 @@ namespace Zones.Controller
             view.zonesDataGridView.Columns.Add(checkBoxColumn);
         }
 
-        void filtreZones(object sender, EventArgs e)
+        private void filtreZones(object sender, EventArgs e)
         {
             string filtre = view.searchTextBox.Text;
             if (string.IsNullOrEmpty(filtre))
@@ -67,7 +67,7 @@ namespace Zones.Controller
             view.zonesDataGridView.DataSource = rep.GetZonesByFiltre(filtre, filtrePer);
         }
 
-        void activarModeEdicio(object sender, EventArgs e)
+        private void activarModeEdicio(object sender, EventArgs e)
         {
             isEditing = !isEditing;
             view.zonesDataGridView.ReadOnly = !isEditing;
@@ -91,7 +91,7 @@ namespace Zones.Controller
             }
         }
 
-        void afegirColumnaGuardar()
+        private void afegirColumnaGuardar()
         {
             if (view.zonesDataGridView.Columns["Guardar"] == null)
             {
@@ -108,7 +108,7 @@ namespace Zones.Controller
             }
         }
 
-        void guardarFila(object sender, DataGridViewCellEventArgs e)
+        private void guardarFila(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == view.zonesDataGridView.Columns["Guardar"].Index && e.RowIndex >= 0)
             {
@@ -141,7 +141,7 @@ namespace Zones.Controller
         }
 
 
-        void loadClientsAndTaxistes(object sender, EventArgs e)
+        private void loadClientsAndTaxistes(object sender, EventArgs e)
         {
             if (view.zonesDataGridView.SelectedRows.Count > 0)
             {
