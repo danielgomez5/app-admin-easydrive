@@ -199,7 +199,14 @@ namespace Clients.Controller
 
             if (viatge.IdTaxistaNavigation?.FotoPerfil != null)
             {
-                picConductor.Load("http://localhost:7126/Photos/" + viatge.IdTaxistaNavigation.FotoPerfil);
+                try
+                {
+                    picConductor.Load("http://localhost:7126/Photos/" + viatge.IdTaxistaNavigation.FotoPerfil);
+                }
+                catch
+                {
+
+                }
             }
 
             card.Controls.Add(lblRuta);

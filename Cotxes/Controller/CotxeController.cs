@@ -172,9 +172,13 @@ namespace Cotxes.Controller
                 ForeColor = Color.FromArgb(97, 91, 113)
             };
 
+            string[] parts = conductor.Horari.Split(';');
+            string dies = parts.Length > 0 ? parts[0].Replace("-", " a ").ToLower() : "";
+            string hores = parts.Length > 1 ? parts[1].Replace("-", " a ") : "";
+
             Label lblDies = new Label
             {
-                Text = "🗓 de dilluns a divendres",
+                Text = $"🗓 de {dies}",
                 Font = new Font("DejaVu Sans Condensed", 14F, FontStyle.Italic),
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
@@ -182,7 +186,7 @@ namespace Cotxes.Controller
 
             Label lblHores = new Label
             {
-                Text = "⏰ de 08:00h a 14:00h",
+                Text = $"⏰ de {hores}",
                 Font = new Font("DejaVu Sans Condensed", 14F, FontStyle.Italic),
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
