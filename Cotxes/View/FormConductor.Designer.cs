@@ -32,6 +32,8 @@
             this.labelUsuari = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelUsuari
@@ -39,7 +41,7 @@
             this.labelUsuari.AutoSize = true;
             this.labelUsuari.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(86)))), ((int)(((byte)(143)))));
-            this.labelUsuari.Location = new System.Drawing.Point(253, 19);
+            this.labelUsuari.Location = new System.Drawing.Point(306, 19);
             this.labelUsuari.Name = "labelUsuari";
             this.labelUsuari.Size = new System.Drawing.Size(95, 34);
             this.labelUsuari.TabIndex = 6;
@@ -50,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("DejaVu Sans Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(91)))), ((int)(((byte)(113)))));
-            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Location = new System.Drawing.Point(56, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 34);
             this.label1.TabIndex = 5;
@@ -65,18 +67,33 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(970, 507);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormConductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(970, 570);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.labelUsuari);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormConductor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conductor";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +104,6 @@
         public System.Windows.Forms.Label labelUsuari;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

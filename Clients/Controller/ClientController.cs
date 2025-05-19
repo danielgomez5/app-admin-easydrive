@@ -132,21 +132,23 @@ namespace Clients.Controller
             Panel card = new Panel
             {
                 Width = 900,
-                Height = 265,
+                Height = 320, // Más alto
                 BorderStyle = BorderStyle.None,
                 BackColor = Color.FromArgb(231, 222, 248),
                 Padding = new Padding(35),
-                Margin = new Padding(10)
+                Margin = new Padding(10),
+                AutoScroll = true // Por si acaso hay más contenido
             };
-
 
             Label lblRuta = new Label
             {
                 Text = $"🚗 Viatge de {viatge.IdReservaNavigation?.Origen} a {viatge.IdReservaNavigation?.Desti}",
                 Font = new Font("DejaVu Sans Condensed", 20F, FontStyle.Bold),
+                ForeColor = Color.FromArgb(97, 91, 113),
                 AutoSize = true,
-                ForeColor = Color.FromArgb(97, 91, 113)
+                MaximumSize = new Size(600, 0) // Máximo ancho antes de saltar de línea
             };
+
             Label lblFecha = new Label
             {
                 Text = $"📅 Día: {viatge.IdReservaNavigation?.DataViatge?.ToString("dd/MM/yyyy")}",
@@ -156,7 +158,7 @@ namespace Clients.Controller
             };
             Label lblDurada = new Label
             {
-                Text = $"🕒 Duració: {viatge.Durada/60} hores",
+                Text = $"🕒 Duració: {viatge.Durada} minuts",
                 Font = new Font("DejaVu Sans Condensed", 16F),
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
@@ -170,11 +172,12 @@ namespace Clients.Controller
             };
             Label lblValoracio = new Label
             {
-                Text = $"⭐ Puntuació: {viatge.Valoracio}",
+                Text = $"⭐ Puntuació: {(viatge.Valoracio != null ? viatge.Valoracio.ToString() : "-")}",
                 Font = new Font("DejaVu Sans Condensed", 16F),
                 AutoSize = true,
                 ForeColor = Color.Goldenrod
             };
+
             PictureBox picConductor = new PictureBox
             {
                 Width = 180,
@@ -182,6 +185,7 @@ namespace Clients.Controller
                 SizeMode = PictureBoxSizeMode.StretchImage,
                 BorderStyle = BorderStyle.FixedSingle
             };
+
             Label lblConductor = new Label
             {
                 Text = $"🏁 Conductor:",
@@ -189,6 +193,7 @@ namespace Clients.Controller
                 AutoSize = true,
                 ForeColor = Color.FromArgb(97, 91, 113)
             };
+
             Label lblConductorNom = new Label
             {
                 Text = $"{viatge.IdTaxistaNavigation.Nom} {viatge.IdTaxistaNavigation.Cognom}",
@@ -205,7 +210,7 @@ namespace Clients.Controller
                 }
                 catch
                 {
-
+                    // Imatge no disponible
                 }
             }
 
@@ -218,37 +223,27 @@ namespace Clients.Controller
             card.Controls.Add(lblConductor);
             card.Controls.Add(lblConductorNom);
 
-
             int yPos = 10;
             foreach (Control c in card.Controls)
             {
                 if (c != picConductor && c != lblConductor && c != lblConductorNom)
                 {
                     c.Location = new Point(15, yPos);
-                    yPos += 50;
-                }
-                else if (c == picConductor)
-                {
-                    c.Location = new Point(card.Width - 200, 10);
-                    yPos = c.Bottom + 10;
-                }
-                else if (c == lblConductor)
-                {
-                    int centerX = picConductor.Left + (picConductor.Width - lblConductor.Width) / 2;
-                    c.Location = new Point(centerX, yPos);
-                    yPos += c.Height + 5;
-                }
-                else if (c == lblConductorNom)
-                {
-                    
-                    int centerX = picConductor.Left + (picConductor.Width - lblConductorNom.Width) / 2;
-                    c.Location = new Point(centerX, yPos);
-                    yPos += c.Height + 10;
+                    yPos += c.Height + 20;
                 }
             }
 
-                return card;
+            picConductor.Location = new Point(card.Width - 200, 20);
+            lblConductor.Location = new Point(
+                picConductor.Left + (picConductor.Width - lblConductor.Width) / 2,
+                picConductor.Bottom + 5);
+            lblConductorNom.Location = new Point(
+                picConductor.Left + (picConductor.Width - lblConductorNom.Width) / 2,
+                lblConductor.Bottom + 2);
+
+            return card;
         }
+
 
         private void eliminaUsuaris(object sender, EventArgs e)
         {
