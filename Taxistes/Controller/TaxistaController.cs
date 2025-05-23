@@ -91,9 +91,17 @@ namespace Taxistes.Controller
                 if (!string.IsNullOrEmpty(u.FotoCarnet))
                 {
                     FotoPerfForm f = new FotoPerfForm();
-                    f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoCarnet);
-                    f.Text = "Foto carnet";
-                    f.Show();
+                    try { 
+                        f.pictureBox1.Load("http://localhost:7126/Photos/" + u.FotoCarnet);
+
+                        f.Text = "Foto carnet";
+                        f.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"El taxista amb DNI {u.Dni} no té foto de carnet", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
                 }
                 else
                 {

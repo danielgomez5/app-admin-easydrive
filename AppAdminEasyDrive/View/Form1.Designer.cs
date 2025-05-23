@@ -40,7 +40,6 @@ namespace AppAdminEasyDrive
             // 
             this.accButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.accButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.accButton.Enabled = false;
             this.accButton.Image = ((System.Drawing.Image)(resources.GetObject("accButton.Image")));
             this.accButton.Location = new System.Drawing.Point(1012, 12);
             this.accButton.Name = "accButton";
